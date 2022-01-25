@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+
 import './App.css';
+import {TikTok} from './TikTok';
+import {Figures} from './Figures';
 
 function App() {
+
+    const maxValue = 5;
+    const minValue = 0;
+
+let [figures, setFigures] = useState(0)
+
+    function reset() {
+    setFigures(0)
+    }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className={"App"}>
+
+        <Figures figures={figures}/>
+        <TikTok
+            setFigures={setFigures}
+            figures={figures}
+            onChange={reset}
+            disabled={figures === 0}
+        />
+
+      </div>
+
   );
 }
 
