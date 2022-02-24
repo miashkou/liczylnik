@@ -63,8 +63,6 @@ function App() {
                      inc={inc}
             />
 
-
-
         </div>
     );
 }
