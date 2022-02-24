@@ -16,7 +16,6 @@ function App() {
     let [state, setState] = useState<null | number>(null)
 
 
-
     function reset() {
         setState(minState)
     }
@@ -28,7 +27,7 @@ function App() {
     }
 
     function inc() {
-        if (state) setState(state + 1)
+        if ( typeof state === 'number') setState(state + 1)
     }
 
     function setMax(value: number) {
@@ -40,8 +39,6 @@ function App() {
         setMinState(value);
         setState(null);
     }
-
-
 
     console.log('state: ', state)
     return (

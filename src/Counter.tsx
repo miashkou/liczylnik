@@ -50,24 +50,32 @@ export function Counter(props: PropsType) {
             // и после нажатия кнопки "Set" здесь появляется minState
         } else
 
-        if ( props.figuresMin < 0 || props.figuresMax <= props.figuresMin) {
+        if ( props.figuresMin < 0 || props.figuresMax <= props.figuresMin ) {
             return 'Incorrect value!'
             // и эти две кнопки (inc, reset) становятся некликабельными
-        } else {
+        } else
+
+        // if (props.figuresMax === props.figuresMin ) {
+        //     return props.state === null
+        //     //выводим большую красную цифру
+        //     // и кнопка inc становится некликабельной
+        // } else
+
             return props.state;
-        }
+
     }
 
+    let isDisable = props.state === props.figuresMax
 
     return (<div className={'Counter'}>
         <div style={Style}>
 
-            {getErrorAndNormalize()}
+            <span style={isDisable ? {color: 'red', fontSize: '45px' } : {}}>{getErrorAndNormalize()}</span>
 
 
         </div>
 
-        <button disabled={props.state === null } style={onStyle} onClick={() => props.inc()}>inc</button>
+        <button disabled={isDisable} style={onStyle} onClick={() => props.inc()}>inc</button>
 
         <button style={offStyle} onClick={props.reset}>reset</button>
 

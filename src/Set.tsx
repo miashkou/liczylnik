@@ -45,6 +45,8 @@ export function Set(props: PropsType) {
 
     };
 
+
+
     //здесь пишется функция с проверкой
 
     return <div className={'Set'}>
