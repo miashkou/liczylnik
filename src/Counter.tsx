@@ -50,17 +50,11 @@ export function Counter(props: PropsType) {
             // и после нажатия кнопки "Set" здесь появляется minState
         } else
 
-        if ( props.figuresMin < 0 || props.figuresMax <= props.figuresMin ) {
+        if ( props.figuresMin < 0 || props.figuresMax <= props.figuresMin || props.figuresMax == props.figuresMin ) {
             return 'Incorrect value!'
             // и эти две кнопки (inc, reset) становятся некликабельными
         } else
-
-        // if (props.figuresMax === props.figuresMin ) {
-        //     return props.state === null
-        //     //выводим большую красную цифру
-        //     // и кнопка inc становится некликабельной
-        // } else
-
+            
             return props.state;
 
     }
