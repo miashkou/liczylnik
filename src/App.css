@@ -19,7 +19,9 @@
   display: flex;
 }
 
-
+.BorderRed {
+  border-color: red;
+}
 
 .Counter {
   border-color: blue;
@@ -46,6 +48,10 @@
   /*vertical-align: middle;*/
   margin: 100px;
   flex-grow: 1 ;
+
+}
+
+.Button3 {
 
 }
 

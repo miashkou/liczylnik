@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 
 import './App.css';
-import {TikTok} from './TikTok';
-import {Figures} from './Figures';
+
 import {Counter} from './Counter';
 import {Set} from './Set';
+
 
 function App() {
     // const maxValue = 5;
@@ -14,6 +14,16 @@ function App() {
     let [minState, setMinState] = useState(0)
 
     let [state, setState] = useState<null | number>(null)
+
+    // let [error, setError] = useState (null)
+
+    //useState-error для подсветки рамки красным или отсутствие подсветки
+
+    //сделать функцию, которая будет обрабатывать корректность введённого числа в режиме реального времени
+
+
+
+
 
 
     function reset() {
@@ -45,6 +55,8 @@ function App() {
         <div className={'App'}>
 
             {/*{state}*/}
+
+            {/*//новая функция прокидывается сюда*/}
             <Set figuresMax={maxState}
                  figuresMin={minState}
                  setMaxState={setMax}
@@ -52,7 +64,8 @@ function App() {
                  setState={setState}
                  onSet={onSet}
                  onChange={reset}
-                 disabled={!!state}/>
+                 disabled={!!state}
+            />
 
             <Counter figuresMin={minState}
                      figuresMax={maxState}
@@ -62,6 +75,7 @@ function App() {
                      minState={minState}
                      inc={inc}
             />
+
 
         </div>
     );
